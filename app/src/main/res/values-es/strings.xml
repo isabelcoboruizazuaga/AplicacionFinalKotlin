@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AplicacionFinalKotlin</string>
+
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -38,8 +40,8 @@
     <string name="lost">¿Estás perdido? Puedes dormir aquí</string>
     <string name="awake">Te despiertan sonidos de hachazos</string>
     <string name="wood">Oye, con esa leña podríamos hacer trampas para cazar</string>
-    <string name="lumberjack">Leñador:</string>
     <string name="cutting">El leñador sigue cortando...</string>
+    <string name="lumberjack">Leñador:</string>
 
     <!--First fragment buttons-->
     <string name="runAway">Huir</string>

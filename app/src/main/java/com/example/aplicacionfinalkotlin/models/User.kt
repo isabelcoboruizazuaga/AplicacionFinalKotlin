@@ -3,6 +3,10 @@ package com.example.aplicacionfinalkotlin.models
 import java.util.ArrayList
 
 class User {
+    var woods=0
+    var traps=0
+    var meat=0
+    var sword=false
 
     var uid: String? = null
     var email: String? = null

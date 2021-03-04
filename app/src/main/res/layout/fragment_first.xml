@@ -31,10 +31,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/backgroundText"
-                    android:text="AAAAA"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textColorHighlight="@color/teal_200"
                     android:textColorHint="#FFFFFF" />
+                <TextView
+                    android:id="@+id/txtState2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/backgroundText"
+                    android:text="AAAAA"
+                    android:textColor="@color/white"
+                    android:textColorHighlight="@color/teal_200"
+                    android:textColorHint="#FFFFFF"
+                    android:visibility="invisible"/>
 
             </LinearLayout>
             <LinearLayout
@@ -80,22 +90,28 @@
                 android:layout_margin="10dp">
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/tv_woods"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    android:visibility="invisible"/>
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/tv_traps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    android:visibility="invisible"/>
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/tv_meat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    android:visibility="invisible"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -113,23 +129,28 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/btn_action1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:text="Make Traps"
+                    android:visibility="invisible"
+                    app:backgroundTint="@color/backgroundButton" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/btn_action2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:text="Put meat in a trap"
+                    android:visibility="invisible"
+                    app:backgroundTint="@color/backgroundButton"  />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btn_action3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
-
+                    android:text="Save"
+                    app:backgroundTint="@color/backgroundButton" />
+<!--
                 <Button
                     android:id="@+id/button9"
                     android:layout_width="match_parent"
@@ -146,7 +167,7 @@
                     android:id="@+id/button11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:text="Button" />-->
             </LinearLayout>
 
             <LinearLayout

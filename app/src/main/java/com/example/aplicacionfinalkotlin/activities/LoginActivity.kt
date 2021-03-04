@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         startActivity(Intent(this, MainActivity::class.java))
                     } else {
-                        Toast.makeText(this, "Error en la autenticación", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, getResources().getString(R.string.errorAutentication), Toast.LENGTH_LONG).show()
                     }
                 }
         }
@@ -135,7 +135,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(Intent(this, MainActivity::class.java))
             } else {
                 //The error message is displayed
-                Toast.makeText(this, "Hubo un error al iniciar sesión", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getResources().getString(R.string.errorLogin), Toast.LENGTH_LONG).show()
             }
         }
     }

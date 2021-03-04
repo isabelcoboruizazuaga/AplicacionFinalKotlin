@@ -30,7 +30,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     startActivity(Intent(this, LoginActivity::class.java))
                 } else {
-                    Toast.makeText(this, "Error al enviar el email", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, getResources().getString(R.string.errorEmail), Toast.LENGTH_LONG).show()
                 }
             }
         }

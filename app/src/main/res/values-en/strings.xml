@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AplicacionFinalKotlin</string>
+
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_text_3">String</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <string name="title_activity_user_selection">UserSelectionActivity</string>
+    <string name="title_activity_chat">ChatActivity</string>
+
+    <!--Error texts-->
+    <string name="errorEmail">There was an error sending the email</string>
+    <string name="succesEmail">Email sent</string>
+    <string name="errorAutentication">There was an autentication error</string>
+    <string name="errorLogin">There was a login error</string>
+    <string name="errorSignUp">Sign Up error</string>
+    <string name="successSignUp">Sign up succesful</string>
+
+
+    <!--First fragment talk-->
+    <string name="night">Night is coming</string>
+    <string name="cantEscape">You can\'t escape the nigth</string>
+    <string name="smoke">There\'s smoke far away</string>
+    <string name="hut">It\'s a hut</string>
+    <string name="modals">¡Eh! ¿Don\'t you know how to knock?</string>
+    <string name="cave">You take refuge in a nearby cave where you spend the night</string>
+    <string name="lost">¿Are you lost? You can sleep here</string>
+    <string name="awake">Hack sounds wake you up</string>
+    <string name="wood">Hey, with that firewood we could make tramps</string>
+    <string name="cutting">The lumberjack is still cutting trees...</string>
+    <string name="lumberjack">Lumberjack:</string>
+
+    <!--First fragment buttons-->
+    <string name="runAway">Run away</string>
+    <string name="enter">Try to enter</string>
+    <string name="back">Return to the forest</string>
+    <string name="carry">Help carrying firewood</string>
+    <string name="refuge">Seek shelter</string>
+    <string name="knock">Knock at the door</string>
+    <string name="sorry">Apologize</string>
+    <string name="cut">Help cutting firewood</string>
+</resources>

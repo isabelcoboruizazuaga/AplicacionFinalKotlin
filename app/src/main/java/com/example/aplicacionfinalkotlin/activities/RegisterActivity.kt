@@ -79,10 +79,10 @@ class RegisterActivity : AppCompatActivity() {
     //Method to redirect the user to the login activity. If the register failed it won't redirect the user
     private fun updateUI(account: FirebaseUser?) {
         if (account != null) {
-            Toast.makeText(this, "Registro completo", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getResources().getString(R.string.successSignUp), Toast.LENGTH_LONG).show()
             startActivity(Intent(this, MainActivity::class.java))
         } else {
-            Toast.makeText(applicationContext, "El registro falló", Toast.LENGTH_SHORT)
+            Toast.makeText(applicationContext, getResources().getString(R.string.errorSignUp), Toast.LENGTH_SHORT)
         }
     }
 
@@ -91,9 +91,9 @@ class RegisterActivity : AppCompatActivity() {
         user!!.sendEmailVerification().addOnCompleteListener(this
         ) { task: Task<Void?> ->
             if (task.isSuccessful) {
-                Toast.makeText(this, "Email enviado", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,  getResources().getString(R.string.succesEmail), Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(this, "Error al enviar", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,  getResources().getString(R.string.errorEmail), Toast.LENGTH_LONG).show()
             }
         }
     }

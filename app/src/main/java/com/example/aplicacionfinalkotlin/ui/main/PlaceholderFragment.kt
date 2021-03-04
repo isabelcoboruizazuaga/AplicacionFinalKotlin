@@ -25,7 +25,7 @@ open class PlaceholderFragment : Fragment() {
         pageViewModel = ViewModelProvider(this).get(PageViewModel::class.java)
         var index = 1
         if (arguments != null) {
-            index = arguments!!.getInt(ARG_SECTION_NUMBER)
+            index = requireArguments().getInt(ARG_SECTION_NUMBER)
         }
         pageViewModel.setIndex(index)
     }
@@ -36,7 +36,7 @@ open class PlaceholderFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_main, container, false)
         val textView: TextView = root.findViewById(R.id.section_label)
-        pageViewModel.text.observe(this, Observer<String> {
+        pageViewModel.text.observe(viewLifecycleOwner, Observer<String> {
             textView.text = it
         })
         return root
