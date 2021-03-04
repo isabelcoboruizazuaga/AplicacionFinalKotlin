@@ -3,10 +3,15 @@ package com.example.aplicacionfinalkotlin.models
 import java.util.ArrayList
 
 class User {
+    var hasSaves=false
     var woods=0
     var traps=0
     var meat=0
-    var sword=false
+    var sword: Sword? = null
+    var key= false
+    var ring=0
+    var healthPotion=0
+    var staminaPotion=0
 
     var uid: String? = null
     var email: String? = null

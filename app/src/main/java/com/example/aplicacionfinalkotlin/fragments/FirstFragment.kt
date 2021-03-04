@@ -9,20 +9,19 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.aplicacionfinalkotlin.R
+import com.example.aplicacionfinalkotlin.models.Material
+import com.example.aplicacionfinalkotlin.models.Sword
 import com.example.aplicacionfinalkotlin.ui.main.PlaceholderFragment
-import com.firebase.ui.auth.data.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.util.ArrayList
 import kotlin.random.Random
 
 
 class FirstFragment : PlaceholderFragment() {
-    var sword=false
     var dragonExists=false
     var woods= 0
     var traps=0
@@ -43,6 +42,29 @@ class FirstFragment : PlaceholderFragment() {
     lateinit var tv_meat: TextView
     lateinit var tv_traps: TextView
 
+    fun makeTraps(){
+        if(woods>5) {
+            traps++
+            woods=woods-5
+            var delay= (10000/traps).toLong()
+
+            tv_traps.visibility=View.VISIBLE
+            tv_meat.visibility=View.VISIBLE
+            tv_traps.setText("traps: " + traps)
+
+            //Meat thread, only when there are traps
+            GlobalScope.launch(Dispatchers.Main) {
+                while (true) {
+                    tv_meat.setText("meat: " + meat)
+
+                    if(meat >= 50) btn_action2.visibility= View.VISIBLE
+                    else btn_action2.visibility= View.INVISIBLE
+                    meat++
+                    delay(delay)
+                }
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +104,25 @@ class FirstFragment : PlaceholderFragment() {
         val eventListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 user= dataSnapshot.getValue(com.example.aplicacionfinalkotlin.models.User::class.java)!!
+                woods=user.woods
+                meat=user.meat
+                traps=user.traps
+
+                if(user.hasSaves){
+                    if(woods>0) {
+                        tv_woods.visibility=View.VISIBLE
+                    }
+                    if(meat>0){
+                        tv_meat.visibility = View.VISIBLE
+                    }
+                    if (traps>0){
+                        traps--
+                        makeTraps()
+                        tv_traps.visibility=View.VISIBLE
+                    }
+                }else {
+                    initializeStateText()
+                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -101,7 +142,7 @@ class FirstFragment : PlaceholderFragment() {
                 getResources().getString(R.string.enter)-> option2_bt1()
                 getResources().getString(R.string.back) -> option3_bt2()
                 getResources().getString(R.string.carry) -> option3_bt1()
-                "Ignorarlo"-> ignore_btn()
+                getResources().getString(R.string.ignore)-> ignore_btn()
             }
         }
         //Second button
@@ -113,12 +154,11 @@ class FirstFragment : PlaceholderFragment() {
                 getResources().getString(R.string.knock) -> option2_bt2()
                 getResources().getString(R.string.sorry) -> option2_bt2()
                 getResources().getString(R.string.cut) -> finalOption()
-                "Acercarse"-> approach_btn()
+                getResources().getString(R.string.approach)-> approach_btn()
             }
         }
         btnOption1.setOnClickListener(clickListener)
         btnOption2.setOnClickListener(clickListener2)
-        initializeStateText()
 
         //Woods Thread
         GlobalScope.launch(Dispatchers.Main) {
@@ -133,54 +173,31 @@ class FirstFragment : PlaceholderFragment() {
             }
         }
 
+
         //Onclick for action buttons
-        val makeTraps = View.OnClickListener {view ->
-            if(woods>5) {
-                traps++
-                woods=woods-5
-                var delay= (10000/traps).toLong()
-
-                tv_traps.visibility=View.VISIBLE
-                tv_meat.visibility=View.VISIBLE
-                tv_traps.setText("traps: " + traps)
-
-                //Meat thread, only when there are traps
-                GlobalScope.launch(Dispatchers.Main) {
-                    while (true) {
-                        tv_meat.setText("meat: " + meat)
-
-                        if(meat >= 50) btn_action2.visibility= View.VISIBLE
-                    else btn_action2.visibility= View.INVISIBLE
-                        meat++
-                        delay(delay)
-                    }
-                }
-            }
+        val onClickTraps = View.OnClickListener {view ->
+            makeTraps()
         }
-        btn_action1.setOnClickListener(makeTraps)
+        btn_action1.setOnClickListener(onClickTraps)
 
         //On click action button 2
         val putMeat= View.OnClickListener { view ->
             if (meat>=50) {
                 meat=meat-50
-                stateText1.text = "Pones algo de carne en las trampas..."
-                stateText2.text = "Oyes un rugido"
+                stateText1.text = getResources().getString(R.string.meat)
+                stateText2.text = getResources().getString(R.string.roar)
                 stateText2.visibility=View.VISIBLE
 
                 btnOption1.visibility = View.VISIBLE
                 btnOption2.visibility = View.VISIBLE
-                btnOption1.text = "Ignorarlo"
-                btnOption2.text = "Acercarse"
+                btnOption1.text = getResources().getString(R.string.ignore)
+                btnOption2.text = getResources().getString(R.string.approach)
             }
         }
         btn_action2.setOnClickListener(putMeat)
 
         //On click action button 3
         val save= View.OnClickListener { view ->
-            user.woods=woods
-            user.meat=meat
-            user.traps=traps
-            user.sword=sword
             saveInDatabase()
         }
         btn_action3.setOnClickListener(save)
@@ -188,6 +205,11 @@ class FirstFragment : PlaceholderFragment() {
 
 
     fun saveInDatabase(){
+        user.woods=woods
+        user.meat=meat
+        user.traps=traps
+        user.hasSaves=true;
+
         dbReference!!.setValue(user)
     }
 
@@ -258,16 +280,16 @@ class FirstFragment : PlaceholderFragment() {
     }
 
     fun ignore_btn(){
-        stateText1.text=  "Ignoras el sonido"
-        stateText2.text=  "Cuando vas a la zona la carne ya no está"
+        stateText1.text=  getResources().getString(R.string.ignoring)
+        stateText2.text=  getResources().getString(R.string.disappeared)
 
         btnOption1.visibility= View.INVISIBLE
         btnOption2.visibility= View.INVISIBLE
     }
 
     fun approach_btn(){
-        stateText1.text=  "Te acercas con cautela..."
-        stateText2.text=  "Hay un enorme dragón, coge la carne y huye al verte"
+        stateText1.text=  getResources().getString(R.string.careful)
+        stateText2.text=  getResources().getString(R.string.dragon)
         dragonExists=true
 
         btnOption1.visibility= View.INVISIBLE
@@ -276,16 +298,65 @@ class FirstFragment : PlaceholderFragment() {
         //The dragon can return with an object
         GlobalScope.launch(Dispatchers.Main) {
             delay(5000)
-            val random = Random.nextInt(0, 2)
-            if(random==1){
-                stateText1.text="The dragon has returned!"
-                stateText2.text="He has brought an iron sword"
-                sword=true
-                user.sword=true
+            val random = Random.nextInt(0, 5)
+            val secundaryRandom= Random.nextInt(1,4)
+
+            var text= getResources().getString(R.string.brought)
+            var obtained=""
+            stateText1.text=getResources().getString(R.string.dragon_return)
+            if(random==0){
+                var material=""
+                var dmg=0
+                when (secundaryRandom) {
+                    1-> material=getResources().getString(R.string.stone)
+                    2-> material= getResources().getString(R.string.iron)
+                    3-> material= getResources().getString(R.string.dragonScale)
+                }
+                when (material) {
+                    getResources().getString(R.string.stone) -> dmg=1
+                    getResources().getString(R.string.iron) -> dmg=2
+                    getResources().getString(R.string.dragonScale) -> dmg=3
+                }
+                var mySword= Sword(material,dmg)
+
+                user.sword= mySword
                 saveInDatabase()
-                Toast.makeText(context,"Iron sword added to inventory",Toast.LENGTH_SHORT).show()
+                obtained=""
+                Toast.makeText(context, user.sword!!.swordName+" added to inventory",Toast.LENGTH_LONG).show()
+            }
+            if(random==1){
+                user.key=true
+                saveInDatabase()
+                Toast.makeText(context,"Key added to inventory",Toast.LENGTH_LONG).show()
+            }
+            if(random==2){
+                if(user.healthPotion<3) {
+                    user.healthPotion++
+                }
+                saveInDatabase()
+                obtained=""
+                Toast.makeText(context,"Health potion added to inventory",Toast.LENGTH_LONG).show()
+            }
+            if(random==3){
+                if(user.staminaPotion<3) {
+                    user.staminaPotion++
+                }
+                saveInDatabase()
+                obtained=""
+                Toast.makeText(context,"Stamina potion added to inventory",Toast.LENGTH_LONG).show()
+            }
+
+            if(random==4){
+                if(user.ring<3) {
+                    user.ring++
+                }
+                saveInDatabase()
+                obtained=""
+                Toast.makeText(context,"Ring added to inventory",Toast.LENGTH_LONG).show()
             }
             dragonExists=false
+
+            stateText2.text= text + obtained
         }
     }
 

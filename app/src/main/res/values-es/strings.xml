@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AplicacionFinalKotlin</string>
+    <string name="app_name">Dragon\'s eye</string>
 
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tab_text_1">Cabaña</string>
+    <string name="tab_text_2">Inventario</string>
+    <string name="tab_text_3">Aventura</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="tab_text_3">String</string>
     <string name="title_activity_login">LoginActivity</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -33,15 +33,23 @@
     <!--First fragment talk-->
     <string name="night">La noche se acerca</string>
     <string name="cantEscape">No puedes huir</string>
-    <string name="smoke">Ves humo a lo lejos...</string>
+    <string name="smoke">Ves humo a lo lejos…</string>
     <string name="hut">Es una cabaña</string>
     <string name="modals">¡Eh! ¿No sabes llamar?</string>
     <string name="cave">Te refugias en una cueva cercana donde pasas la noche</string>
     <string name="lost">¿Estás perdido? Puedes dormir aquí</string>
     <string name="awake">Te despiertan sonidos de hachazos</string>
     <string name="wood">Oye, con esa leña podríamos hacer trampas para cazar</string>
-    <string name="cutting">El leñador sigue cortando...</string>
+    <string name="cutting">El leñador sigue cortando…</string>
     <string name="lumberjack">Leñador:</string>
+    <string name="meat">Pones algo de carne en las trampas…</string>
+    <string name="roar">Oyes un rugido</string>
+    <string name="ignoring">Ignoras el sonido</string>
+    <string name="disappeared">Cuando vas a la zona la carne ya no está</string>
+    <string name="careful">Te acercas con cautela…</string>
+    <string name="dragon">Hay un enorme dragón, coge la carne y huye al verte</string>
+    <string name="dragon_return">¡El dragón ha regresado!</string>
+    <string name="brought">Ha traído: </string>
 
     <!--First fragment buttons-->
     <string name="runAway">Huir</string>
@@ -52,6 +60,14 @@
     <string name="knock">Llamar a la puerta</string>
     <string name="sorry">Disculparse</string>
     <string name="cut">Ayudar a cortar leña</string>
+    <string name="ignore">Ignorarlo</string>
+    <string name="approach">Acercarse</string>
+
+    <!--Objects and materials names-->
+    <string name="sword">Espada</string>
+    <string name="stone">Piedra</string>
+    <string name="iron">Hierro</string>
+    <string name="dragonScale">Escamas de dragón</string>
 
 
 </resources>

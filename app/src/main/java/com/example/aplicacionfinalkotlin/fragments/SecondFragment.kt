@@ -1,34 +1,39 @@
 package com.example.aplicacionfinalkotlin.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import com.example.aplicacionfinalkotlin.R
+import com.example.aplicacionfinalkotlin.models.Sword
 import com.example.aplicacionfinalkotlin.ui.main.PlaceholderFragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SecondFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SecondFragment : PlaceholderFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var dbReference: DatabaseReference? = null
+    private var database: FirebaseDatabase? = null
+    private var mAuth: FirebaseAuth? = null
+    private lateinit var user: com.example.aplicacionfinalkotlin.models.User
+    var sword:Sword?= null
+    var key= false
+    var ring=0
+    var healthPotion=0
+    var staminaPotion=0
+    lateinit var ivSword: ImageView
+    lateinit var ivKey: ImageView
+    lateinit var ivring1: ImageView
+    lateinit var ivring2: ImageView
+    lateinit var ivhp1: ImageView
+    lateinit var ivhp2: ImageView
+    lateinit var ivsp1: ImageView
+    lateinit var ivsp2: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -39,23 +44,56 @@ class SecondFragment : PlaceholderFragment() {
         return inflater.inflate(R.layout.fragment_second, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SecondFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SecondFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        ivSword = requireView().findViewById<View>(R.id.ivSword) as ImageView
+        ivKey = requireView().findViewById<View>(R.id.ivKey) as ImageView
+        ivring1 = requireView().findViewById<View>(R.id.ivring1) as ImageView
+        ivring2 = requireView().findViewById<View>(R.id.ivring2) as ImageView
+        ivhp1 = requireView().findViewById<View>(R.id.ivhp1) as ImageView
+        ivhp2 = requireView().findViewById<View>(R.id.ivhp2) as ImageView
+        ivring2 = requireView().findViewById<View>(R.id.ivring2) as ImageView
+        ivsp1 = requireView().findViewById<View>(R.id.ivsp1) as ImageView
+        ivsp2 = requireView().findViewById<View>(R.id.ivsp2) as ImageView
+
+
+        //User uid extracted
+        mAuth = FirebaseAuth.getInstance()
+        var uid= mAuth!!.uid
+
+        //Database initialization
+        database = FirebaseDatabase.getInstance()
+        dbReference = database!!.reference.child("User")
+        dbReference = FirebaseDatabase.getInstance().reference.child("User").child(uid.toString())
+        val eventListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                user= dataSnapshot.getValue(com.example.aplicacionfinalkotlin.models.User::class.java)!!
+
+                sword= user.sword
+                ring=user.ring
+                healthPotion=user.healthPotion
+                staminaPotion=user.staminaPotion
+                key=user.key
+
+                if(sword!=null) ivSword.visibility=View.VISIBLE
+                if(key) ivKey.visibility=View.VISIBLE
+                if(healthPotion==1) ivhp1.visibility=View.VISIBLE
+                if(healthPotion>1) ivhp2.visibility=View.VISIBLE
+                if(staminaPotion==1) ivsp1.visibility=View.VISIBLE
+                if(staminaPotion>1) ivsp2.visibility=View.VISIBLE
+                if(ring==1) ivring1.visibility=View.VISIBLE
+                if(ring>1) ivring1.visibility=View.VISIBLE
+
             }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.e("onDataChange", "Error!", databaseError.toException())
+            }
+        }
+        dbReference!!.addValueEventListener(eventListener)
+
+
+
     }
+
 }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AplicacionFinalKotlin</string>
+    <string name="app_name">Dragon\'s eye</string>
 
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tab_text_1">Hut</string>
+    <string name="tab_text_2">Inventory</string>
+    <string name="tab_text_3">Quest</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="tab_text_3">String</string>
     <string name="title_activity_login">LoginActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -27,7 +26,7 @@
     <string name="errorAutentication">There was an autentication error</string>
     <string name="errorLogin">There was a login error</string>
     <string name="errorSignUp">Sign Up error</string>
-    <string name="successSignUp">Sign up succesful</string>
+    <string name="successSignUp">Sign up successful</string>
 
 
     <!--First fragment talk-->
@@ -40,8 +39,17 @@
     <string name="lost">¿Are you lost? You can sleep here</string>
     <string name="awake">Hack sounds wake you up</string>
     <string name="wood">Hey, with that firewood we could make tramps</string>
-    <string name="cutting">The lumberjack is still cutting trees...</string>
+    <string name="cutting">The lumberjack is still cutting trees…</string>
     <string name="lumberjack">Lumberjack:</string>
+    <string name="meat">You put meat in the traps</string>
+    <string name="roar">You hear a roar</string>
+    <string name="ignoring">You ignore the sound</string>
+    <string name="disappeared">When you arrive to the area, the meat is gone.</string>
+    <string name="careful">You approach carefully…</string>
+    <string name="dragon">There\'s a huge dragon, he catches the meat and runs away from you</string>
+    <string name="dragon_return">The dragon has returned!</string>
+    <string name="brought">He has brought: </string>
+
 
     <!--First fragment buttons-->
     <string name="runAway">Run away</string>
@@ -52,4 +60,12 @@
     <string name="knock">Knock at the door</string>
     <string name="sorry">Apologize</string>
     <string name="cut">Help cutting firewood</string>
+    <string name="ignore">Ignore it</string>
+    <string name="approach">Approach</string>
+
+    <!--Objects and materials names-->
+    <string name="sword">Sword</string>
+    <string name="stone">Stone</string>
+    <string name="iron">Iron</string>
+    <string name="dragonScale">Dragon Scale</string>
 </resources>
