@@ -9,30 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionFinalKotlin">
-        <activity android:name=".activities.LoginActivity"></activity>
-        <activity android:name=".MainActivity2" />
         <activity
-            android:name=".activities.ChatActivity"
+            android:name=".views.QuestActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+        <activity android:name=".views.LoginActivity" />
+        <activity android:name=".views.MainActivity2" />
+        <activity
+            android:name=".views.ChatActivity"
             android:label="@string/title_activity_chat"
             android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar" />
         <activity
-            android:name=".activities.UserSelectionActivity"
+            android:name=".views.UserSelectionActivity"
             android:label="@string/title_activity_user_selection"
             android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar" />
         <activity
-            android:name=".activities.ForgotPasswordActivity"
+            android:name=".views.ForgotPasswordActivity"
             android:label="@string/title_activity_forgot_password"
             android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar" />
         <activity
-            android:name=".activities.RegisterActivity"
+            android:name=".views.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar" />
         <activity
-            android:name=".activities.FirstActivity"
+            android:name=".views.FirstActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar">
             <intent-filter>

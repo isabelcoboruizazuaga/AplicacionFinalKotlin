@@ -1,16 +1,13 @@
-package com.example.aplicacionfinalkotlin
+package com.example.aplicacionfinalkotlin.views
 
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import com.example.aplicacionfinalkotlin.activities.UserSelectionActivity
-import com.example.aplicacionfinalkotlin.ui.main.SectionsPagerAdapter
+import com.example.aplicacionfinalkotlin.R
+import com.example.aplicacionfinalkotlin.controllers.main.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 

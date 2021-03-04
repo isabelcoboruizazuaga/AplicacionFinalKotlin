@@ -1,4 +1,4 @@
-package com.example.aplicacionfinalkotlin.fragments
+package com.example.aplicacionfinalkotlin.views
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.aplicacionfinalkotlin.R
-import com.example.aplicacionfinalkotlin.models.Material
 import com.example.aplicacionfinalkotlin.models.Sword
-import com.example.aplicacionfinalkotlin.ui.main.PlaceholderFragment
+import com.example.aplicacionfinalkotlin.controllers.main.PlaceholderFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.coroutines.Dispatchers

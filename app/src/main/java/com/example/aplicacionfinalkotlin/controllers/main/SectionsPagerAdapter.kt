@@ -1,4 +1,4 @@
-package com.example.aplicacionfinalkotlin.ui.main
+package com.example.aplicacionfinalkotlin.controllers.main
 
 import android.content.Context
 import androidx.annotation.StringRes

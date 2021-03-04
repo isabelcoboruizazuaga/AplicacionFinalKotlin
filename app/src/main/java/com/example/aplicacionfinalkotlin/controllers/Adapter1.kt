@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aplicacionfinalkotlin.R
-import com.example.aplicacionfinalkotlin.activities.ChatActivity
+import com.example.aplicacionfinalkotlin.views.ChatActivity
 import com.example.aplicacionfinalkotlin.models.User
 import java.util.ArrayList
 

@@ -1,4 +1,4 @@
-package com.example.aplicacionfinalkotlin;
+package com.example.aplicacionfinalkotlin.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.example.aplicacionfinalkotlin.R;
 
 public class MainActivity2 extends AppCompatActivity {
 

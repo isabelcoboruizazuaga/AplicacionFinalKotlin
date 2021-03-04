@@ -1,14 +1,12 @@
-package com.example.aplicacionfinalkotlin.activities
+package com.example.aplicacionfinalkotlin.views
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aplicacionfinalkotlin.R
-import com.example.aplicacionfinalkotlin.activities.ForgotPasswordActivity
 
 class FirstActivity : AppCompatActivity() {
     lateinit var text: TextView

@@ -1,4 +1,4 @@
-package com.example.aplicacionfinalkotlin.activities
+package com.example.aplicacionfinalkotlin.views
 
 import android.app.Activity
 import android.content.Intent
@@ -10,7 +10,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.aplicacionfinalkotlin.MainActivity
 import com.example.aplicacionfinalkotlin.R
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse

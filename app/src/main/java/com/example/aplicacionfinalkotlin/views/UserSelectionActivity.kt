@@ -1,10 +1,8 @@
-package com.example.aplicacionfinalkotlin.activities
+package com.example.aplicacionfinalkotlin.views
 
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView

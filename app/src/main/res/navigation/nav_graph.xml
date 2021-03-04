@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/First2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.First2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.First2Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first2">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.Second2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.Second2Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second2">
 
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/First2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.First2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.First2Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first2">
 
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.Second2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.Second2Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second2">
 
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/First2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.First2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.First2Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first2">
 
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.Second2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.Second2Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second2">
 
@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/First3Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.First3Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.First3Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first3">
 
@@ -97,7 +97,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second3Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.Second3Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.Second3Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second3">
 
@@ -107,7 +107,7 @@
     </fragment>
     <fragment
         android:id="@+id/First2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.First2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.First2Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first2">
 
@@ -117,7 +117,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.Second2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.Second2Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second2">
 
@@ -127,7 +127,7 @@
     </fragment>
     <fragment
         android:id="@+id/First2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.First2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.First2Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first2">
 
@@ -137,7 +137,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second2Fragment"
-        android:name="com.example.aplicacionfinalkotlin.activities.Second2Fragment"
+        android:name="com.example.aplicacionfinalkotlin.views.Second2Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second2">
 

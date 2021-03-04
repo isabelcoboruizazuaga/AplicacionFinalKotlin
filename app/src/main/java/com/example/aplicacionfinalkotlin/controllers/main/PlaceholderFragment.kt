@@ -1,4 +1,4 @@
-package com.example.aplicacionfinalkotlin.ui.main
+package com.example.aplicacionfinalkotlin.controllers.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.aplicacionfinalkotlin.R
-import com.example.aplicacionfinalkotlin.fragments.FirstFragment
-import com.example.aplicacionfinalkotlin.fragments.SecondFragment
-import com.example.aplicacionfinalkotlin.fragments.ThirdFragment
+import com.example.aplicacionfinalkotlin.views.FirstFragment
+import com.example.aplicacionfinalkotlin.views.SecondFragment
+import com.example.aplicacionfinalkotlin.views.ThirdFragment
 
 /**
  * A placeholder fragment containing a simple view.

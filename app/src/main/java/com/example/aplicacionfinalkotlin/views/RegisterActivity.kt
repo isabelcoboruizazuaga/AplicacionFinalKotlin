@@ -1,4 +1,4 @@
-package com.example.aplicacionfinalkotlin.activities
+package com.example.aplicacionfinalkotlin.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,10 +6,7 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import com.example.aplicacionfinalkotlin.MainActivity
 import com.example.aplicacionfinalkotlin.R
 import com.example.aplicacionfinalkotlin.models.User
 import com.google.android.gms.tasks.Task
