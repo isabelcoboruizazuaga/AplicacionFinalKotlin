@@ -13,6 +13,7 @@ import com.example.aplicacionfinalkotlin.R
 import com.example.aplicacionfinalkotlin.controllers.main.PlaceholderFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import java.lang.Exception
 
 class ThirdFragment : PlaceholderFragment() {
     lateinit var btnQuest1: Button
@@ -63,9 +64,16 @@ class ThirdFragment : PlaceholderFragment() {
         dbReference = FirebaseDatabase.getInstance().reference.child("User").child(uid.toString())
         val eventListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                user= dataSnapshot.getValue(com.example.aplicacionfinalkotlin.models.User::class.java)!!
-                userDmg= user.sword!!.dmg
-                userHealthPotions=user.healthPotion
+                try {
+                    user =
+                        dataSnapshot.getValue(com.example.aplicacionfinalkotlin.models.User::class.java)!!
+                    if (user.sword != null) {
+                        userDmg = user.sword!!.dmg
+                    }
+                    userHealthPotions = user.healthPotion
+                }catch (e: Exception){
+
+                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

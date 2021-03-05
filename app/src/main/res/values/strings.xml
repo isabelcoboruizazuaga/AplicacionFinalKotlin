@@ -60,6 +60,9 @@
     <string name="cut">Ayudar a cortar leña</string>
     <string name="ignore">Ignorarlo</string>
     <string name="approach">Acercarse</string>
+    <string name="traps">Hacer trampas</string>
+    <string name="meat_traps">Poner carne en las trampas</string>
+    <string name="save">Guardar</string>
 
     <!--Objects and materials names-->
     <string name="sword">Espada</string>

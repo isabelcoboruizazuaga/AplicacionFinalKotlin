@@ -104,26 +104,30 @@ class FirstFragment : PlaceholderFragment() {
         dbReference = FirebaseDatabase.getInstance().reference.child("User").child(uid.toString())
         val eventListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                user= dataSnapshot.getValue(com.example.aplicacionfinalkotlin.models.User::class.java)!!
-                woods=user.woods
-                meat=user.meat
-                traps=user.traps
+                try {
+                    user =
+                        dataSnapshot.getValue(com.example.aplicacionfinalkotlin.models.User::class.java)!!
+                    woods = user.woods
+                    meat = user.meat
+                    traps = user.traps
 
-                if(user.hasSaves){
-                    if(woods>0) {
-                        tv_woods.visibility=View.VISIBLE
+                    if (user.hasSaves) {
+                        if (woods > 0) {
+                            tv_woods.visibility = View.VISIBLE
+                        }
+                        if (meat > 0) {
+                            tv_meat.visibility = View.VISIBLE
+                        }
+                        if (traps > 0) {
+                            traps--
+                            makeTraps()
+                            tv_traps.visibility = View.VISIBLE
+                        }
+                    } else {
+                        initializeStateText()
                     }
-                    if(meat>0){
-                        tv_meat.visibility = View.VISIBLE
-                    }
-                    if (traps>0){
-                        traps--
-                        makeTraps()
-                        tv_traps.visibility=View.VISIBLE
-                    }
-                }else {
-                    initializeStateText()
-                }
+                }catch (e:Exception){}
+
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -322,7 +326,6 @@ class FirstFragment : PlaceholderFragment() {
 
                 user.sword= mySword
                 saveInDatabase()
-                obtained=""
                 Toast.makeText(context, user.sword!!.swordName+" added to inventory",Toast.LENGTH_LONG).show()
             }
             if(random==1){

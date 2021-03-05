@@ -131,7 +131,7 @@
                     android:id="@+id/btn_action1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Make Traps"
+                    android:text="@string/traps"
                     android:visibility="invisible"
                     app:backgroundTint="@color/backgroundButton" />
 
@@ -139,7 +139,7 @@
                     android:id="@+id/btn_action2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Put meat in a trap"
+                    android:text="@string/meat_traps"
                     android:visibility="invisible"
                     app:backgroundTint="@color/backgroundButton"  />
 
@@ -147,26 +147,8 @@
                     android:id="@+id/btn_action3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Save"
+                    android:text="@string/save"
                     app:backgroundTint="@color/backgroundButton" />
-<!--
-                <Button
-                    android:id="@+id/button9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:id="@+id/button10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:id="@+id/button11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />-->
             </LinearLayout>
 
             <LinearLayout

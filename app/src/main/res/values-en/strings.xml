@@ -62,6 +62,9 @@
     <string name="cut">Help cutting firewood</string>
     <string name="ignore">Ignore it</string>
     <string name="approach">Approach</string>
+    <string name="traps">Make traps</string>
+    <string name="meat_traps">Put meat in a trap</string>
+    <string name="save">Save</string>
 
     <!--Objects and materials names-->
     <string name="sword">Sword</string>
