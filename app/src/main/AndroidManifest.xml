@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionFinalKotlin">
         <activity
-            android:name=".views.QuestActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+            android:name=".views.FirstActivity"
+            android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar"></activity>
         <activity android:name=".views.LoginActivity" />
         <activity android:name=".views.MainActivity2" />
         <activity
@@ -35,9 +35,9 @@
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar" />
         <activity
-            android:name=".views.FirstActivity"
+            android:name=".views.QuestActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AplicacionFinalKotlin.NoActionBar">
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

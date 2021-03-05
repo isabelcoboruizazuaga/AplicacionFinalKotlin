@@ -16,8 +16,8 @@ class Player(private val image: Bitmap) {
         w = image.width
         h = image.height
 
-        x = screenWidth/2
-        y = screenHeight - 200
+        x = 100
+        y = 100
     }
 
     /**
@@ -29,11 +29,11 @@ class Player(private val image: Bitmap) {
 
     /**
      * update properties for the game object
-     * when the player touches the screen, position the player bitmap there
+     * when the player moves the screen the position updates
      */
-    fun updateTouch(touch_x: Int, touch_y: Int) {
-        x = touch_x - w / 2
-        y = touch_y - h / 2
+    fun updatePosition(player_x: Int, player_y: Int) {
+        x = player_x - w / 2
+        y = player_y - h / 2
     }
 
 }
