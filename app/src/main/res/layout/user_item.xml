@@ -5,12 +5,12 @@
     android:layout_height="150dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="@dimen/cardview_default_radius"
-    app:cardElevation="@dimen/cardview_default_elevation">
+    app:cardElevation="@dimen/cardview_default_elevation"
+    android:backgroundTint="@color/backgroundRecycler">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="136dp">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,6 +43,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:text="Nombre de usuario"
+                    android:textColor="@color/eyeGreen"
                     android:gravity="center"/>
 
                 <TextView
@@ -53,6 +54,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:text="Email de usuario"
+                    android:textColor="@color/white"
                     android:gravity="center"/>
             </LinearLayout>
 

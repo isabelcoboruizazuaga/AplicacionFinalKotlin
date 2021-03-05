@@ -8,11 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-
     <color name="eyeBlue">#000569</color>
     <color name="eyeGreen">#2fef2b</color>
     <color name="eyeSecondGreen">#75da99</color>
     <color name="backgroundText">#8075da99</color>
-    <color name="backgroundButton">#80000569</color>
+    <color name="backgroundButton">#83000569</color>
     <color name="tabsBar">#802fef2b</color>
+    <color name="backgroundRecycler">#1D271C</color>
 </resources>

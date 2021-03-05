@@ -18,7 +18,9 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         app:cardCornerRadius="@dimen/cardview_default_radius"
-        app:cardElevation="@dimen/cardview_default_elevation">
+        app:cardElevation="@dimen/cardview_default_elevation"
+        android:background="@color/backgroundButton"
+        android:backgroundTint="@color/backgroundButton">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,10 +40,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:layout_weight="1"
+                    android:textColor="@color/eyeGreen"
                     android:text="Nombre Usuario"
                     android:textStyle="bold" />
-                <!--
-                    android:textColor="@color/userName"-->
 
                 <TextView
                     android:id="@+id/txtMessage"
@@ -49,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:text="Mensaje" />
             </LinearLayout>
         </LinearLayout>

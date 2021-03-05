@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import com.example.aplicacionfinalkotlin.R
 import com.example.aplicacionfinalkotlin.controllers.main.PlaceholderFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -73,15 +74,17 @@ class ThirdFragment : PlaceholderFragment() {
         }
         dbReference!!.addValueEventListener(eventListener)
 
-        //General intent extras
-        val intent = Intent(context, QuestActivity::class.java)
-        intent.putExtra("dmg", userDmg)
-        intent.putExtra("potions", userHealthPotions)
+
 
         /*
         * On Click for each level
         * */
         val quest1 = View.OnClickListener {view ->
+            //General intent extras
+            val intent = Intent(context, QuestActivity::class.java)
+            intent.putExtra("dmg", userDmg)
+            intent.putExtra("potions", userHealthPotions)
+
             //Indication of level
             intent.putExtra("level",1)
             //The new activity is launched
@@ -90,6 +93,11 @@ class ThirdFragment : PlaceholderFragment() {
         btnQuest1.setOnClickListener(quest1)
 
         val quest2 = View.OnClickListener {view ->
+            //General intent extras
+            val intent = Intent(context, QuestActivity::class.java)
+            intent.putExtra("dmg", userDmg)
+            intent.putExtra("potions", userHealthPotions)
+
             //Indication of level
             intent.putExtra("level",2)
             //The new activity is launched
@@ -98,6 +106,11 @@ class ThirdFragment : PlaceholderFragment() {
         btnQuest2.setOnClickListener(quest2)
 
         val quest3 = View.OnClickListener {view ->
+            //General intent extras
+            val intent = Intent(context, QuestActivity::class.java)
+            intent.putExtra("dmg", userDmg)
+            intent.putExtra("potions", userHealthPotions)
+
             //Indication of level
             intent.putExtra("level",3)
             //The new activity is launched
@@ -106,6 +119,11 @@ class ThirdFragment : PlaceholderFragment() {
         btnQuest3.setOnClickListener(quest3)
 
         val quest4 = View.OnClickListener {view ->
+            //General intent extras
+            val intent = Intent(context, QuestActivity::class.java)
+            intent.putExtra("dmg", userDmg)
+            intent.putExtra("potions", userHealthPotions)
+
             //Indication of level
             intent.putExtra("level",4)
             //The new activity is launched
@@ -114,6 +132,11 @@ class ThirdFragment : PlaceholderFragment() {
         btnQuest4.setOnClickListener(quest4)
 
         val quest5 = View.OnClickListener {view ->
+            //General intent extras
+            val intent = Intent(context, QuestActivity::class.java)
+            intent.putExtra("dmg", userDmg)
+            intent.putExtra("potions", userHealthPotions)
+
             //Indication of level
             intent.putExtra("level",5)
             //The new activity is launched
@@ -122,6 +145,11 @@ class ThirdFragment : PlaceholderFragment() {
         btnQuest5.setOnClickListener(quest5)
 
         val quest6 = View.OnClickListener {view ->
+            //General intent extras
+            val intent = Intent(context, QuestActivity::class.java)
+            intent.putExtra("dmg", userDmg)
+            intent.putExtra("potions", userHealthPotions)
+
             //Indication of level
             intent.putExtra("level",6)
             //The new activity is launched

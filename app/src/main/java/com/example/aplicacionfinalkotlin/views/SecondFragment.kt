@@ -77,11 +77,11 @@ class SecondFragment : PlaceholderFragment() {
 
                 if(sword!=null) ivSword.visibility=View.VISIBLE
                 if(key) ivKey.visibility=View.VISIBLE
-                if(healthPotion==1) ivhp1.visibility=View.VISIBLE
+                if(healthPotion>0) ivhp1.visibility=View.VISIBLE
                 if(healthPotion>1) ivhp2.visibility=View.VISIBLE
-                if(staminaPotion==1) ivsp1.visibility=View.VISIBLE
+                if(staminaPotion>0) ivsp1.visibility=View.VISIBLE
                 if(staminaPotion>1) ivsp2.visibility=View.VISIBLE
-                if(ring==1) ivring1.visibility=View.VISIBLE
+                if(ring>0) ivring1.visibility=View.VISIBLE
                 if(ring>1) ivring1.visibility=View.VISIBLE
 
             }

@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:backgroundTint="@color/backgroundRecycler"
+    android:background="@color/backgroundRecycler">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -35,6 +37,8 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:hint="Mensaje"
+            android:textColorHint="@color/white"
+            android:textColor="@color/eyeGreen"
             android:text=""/>
 
         <ImageButton

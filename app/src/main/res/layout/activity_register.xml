@@ -5,54 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".views.RegisterActivity">
+    tools:context=".views.RegisterActivity"
+    android:background="@color/backgroundRecycler">
 
-    <EditText
-        android:id="@+id/txtName"
-        android:hint="Nombre"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center|center_horizontal"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/txtPhone"
-        android:hint="Teléfono"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone" />
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Nombre"
+            android:textColorHint="@color/white"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="@color/eyeGreen"/>
 
-    <EditText
-        android:id="@+id/txtEmail"
-        android:hint="Email"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
+        <EditText
+            android:id="@+id/txtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Teléfono"
+            android:textColorHint="@color/white"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textColor="@color/eyeGreen" />
 
-    <EditText
-        android:id="@+id/txtPassword"
-        android:hint="Contraseña"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Email"
+            android:textColorHint="@color/white"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textColor="@color/eyeGreen"/>
 
-    <Button
-        android:id="@+id/register"
-        android:onClick="Register"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrarse" />
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:textColorHint="@color/white"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/eyeGreen" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="Register"
+            android:padding="10dp"
+            android:text="Registrarse" />
+
+    </LinearLayout>
+
 </LinearLayout>
