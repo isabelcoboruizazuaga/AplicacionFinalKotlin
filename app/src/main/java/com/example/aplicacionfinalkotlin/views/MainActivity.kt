@@ -10,7 +10,6 @@ import com.example.aplicacionfinalkotlin.R
 import com.example.aplicacionfinalkotlin.controllers.main.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
+
+
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { startActivity(Intent(this@MainActivity, UserSelectionActivity::class.java))
         }

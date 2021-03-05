@@ -2,6 +2,7 @@ package com.example.aplicacionfinalkotlin.models
 
 import java.util.ArrayList
 
+
 class User {
     var hasSaves=false
     var woods=0

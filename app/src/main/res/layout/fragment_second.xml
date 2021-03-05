@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="invisible"
                     android:src="@drawable/sword"/>
             </LinearLayout>
 
@@ -46,6 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="invisible"
                     android:src="@drawable/healthpotion"/>
             </LinearLayout>
 
@@ -60,6 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="invisible"
                     android:src="@drawable/stamina"/>
             </LinearLayout>
 
@@ -74,6 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="invisible"
                     android:src="@drawable/ring"/>
             </LinearLayout>
         </LinearLayout>
@@ -98,6 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="invisible"
                     android:src="@drawable/key" />
             </LinearLayout>
 
@@ -112,6 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="invisible"
                     android:src="@drawable/healthpotion"/>
             </LinearLayout>
 
@@ -126,6 +132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="invisible"
                     android:src="@drawable/stamina"/>
             </LinearLayout>
 
@@ -140,6 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="invisible"
                     android:src="@drawable/ring"/>
             </LinearLayout>
         </LinearLayout>

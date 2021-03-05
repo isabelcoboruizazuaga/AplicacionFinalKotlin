@@ -25,10 +25,12 @@ class FirstFragment : PlaceholderFragment() {
     var woods= 0
     var traps=0
     var meat=0
+
     private var dbReference: DatabaseReference? = null
     private var database: FirebaseDatabase? = null
     private var mAuth: FirebaseAuth? = null
     private lateinit var user: com.example.aplicacionfinalkotlin.models.User
+
     lateinit var stateText1: TextView
     lateinit var stateText2: TextView
     lateinit var btnOption1: Button
@@ -312,9 +314,9 @@ class FirstFragment : PlaceholderFragment() {
                     3-> material= getResources().getString(R.string.dragonScale)
                 }
                 when (material) {
-                    getResources().getString(R.string.stone) -> dmg=1
-                    getResources().getString(R.string.iron) -> dmg=2
-                    getResources().getString(R.string.dragonScale) -> dmg=3
+                    getResources().getString(R.string.stone) -> dmg=2
+                    getResources().getString(R.string.iron) -> dmg=3
+                    getResources().getString(R.string.dragonScale) -> dmg=5
                 }
                 var mySword= Sword(material,dmg)
 

@@ -2,6 +2,7 @@ package com.example.aplicacionfinalkotlin.views
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.hardware.Sensor
@@ -20,7 +21,7 @@ import java.util.*
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-class GameView(context: Context, attributes: AttributeSet) : SurfaceView(context, attributes), SurfaceHolder.Callback, SensorEventListener {
+class GameView(context: Context,var dmg: Int, var healthPotions: Int,var level: Int, attributes: AttributeSet?) : SurfaceView(context, attributes), SurfaceHolder.Callback, SensorEventListener {
     private lateinit var sensorManager: SensorManager
     var lastClick: Long=0
     var lastCollision: Long=0
@@ -55,6 +56,7 @@ class GameView(context: Context, attributes: AttributeSet) : SurfaceView(context
             SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM
         )
 
+        //GameLoop
         holder.addCallback(this)
         thread= GameThread(holder,this)
     }
@@ -123,8 +125,13 @@ class GameView(context: Context, attributes: AttributeSet) : SurfaceView(context
             }
         }
 
-        canvas.drawBitmap(bpmPoti2,width - 40.toFloat(),40.toFloat(),null)
-        canvas.drawBitmap(bpmPoti1,width - 41.toFloat()-bpmPoti1.width,40.toFloat(),null)
+        if(healthPotions>0){
+            canvas.drawBitmap(bpmPoti2,width - 40.toFloat(),40.toFloat(),null)
+            if(healthPotions>1){
+                canvas.drawBitmap(bpmPoti1,width - 41.toFloat()-bpmPoti1.width,40.toFloat(),null)
+            }
+        }
+
 
         for(i in sprites) {
             i!!.draw(canvas)
@@ -141,39 +148,55 @@ class GameView(context: Context, attributes: AttributeSet) : SurfaceView(context
                     val random = Random.nextInt(0, 10)
                     if (random == 0 || random==4 || random==8) {
                         health--
+                        if(health<=0){
+                            (context as Activity).finish()
+
+                            gameOver(false)
+                        }
                     }
                     //The player will attack the enemy with their sword and if the enemy dies it disappears
-                    i.health--
+                    i.health=i.health-dmg
                     if(i.health<=0){
                         sprites.remove(i)
-                        if(sprites.size==0) (context as Activity).finish()
+                        if(sprites.size==0) {
+                            (context as Activity).finish()
+
+                            gameOver(true)
+                        }
                     }
                 }
             }
         }
     }
 
-    fun increaseHealth(){
-        health++
+    fun gameOver(haswin: Boolean){
+        //The other activity is launched
+        val intent = Intent(context, MainActivity::class.java)
+        intent.putExtra("hasWin", haswin)
+        intent.putExtra("potions", healthPotions)
+        context.startActivity(intent)
     }
 
-
-
+    //Fill the array of enemies
     fun refillEnemies(){
-        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),2))
-        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),2))
-        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),2))
-        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),2))
-        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),2))
+        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),level))
+        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),level))
+        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),level))
+        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),level))
+        sprites.add(Enemy(BitmapFactory.decodeResource(resources, R.drawable.grenade),level))
     }
 
+    //On touch for the potions, increases the health
     override fun onTouchEvent(event: MotionEvent): Boolean {
         if (System.currentTimeMillis() - lastClick > 300) {
             lastClick = System.currentTimeMillis()
             val x = event.x
             val y = event.y
 
-            if(x>width - 40 - bpmPoti1.width && y<40+bpmPoti1.height) health++
+            if(x>width - 40 - bpmPoti1.width && y<40+bpmPoti1.height){
+                health++
+                healthPotions--
+            }
 
         }
         return true

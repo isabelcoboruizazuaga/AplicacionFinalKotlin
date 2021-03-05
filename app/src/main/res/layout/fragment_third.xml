@@ -10,16 +10,77 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="50dp">
+        android:background="@drawable/background2">
 
-        <Button
-            android:id="@+id/btnQuest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foregroundGravity="center_vertical"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Go!" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnQuest1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/backgroundButton"
+                android:foregroundGravity="center_vertical"
+                android:gravity="center"
+                android:text="Level 1" />
+
+            <Button
+                android:id="@+id/btnQuest2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/backgroundButton"
+                android:foregroundGravity="center_vertical"
+                android:text="Level 2" />
+
+            <Button
+                android:id="@+id/btnQuest3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:foregroundGravity="center_vertical"
+                android:backgroundTint="@color/backgroundButton"
+                android:text="Level 3" />
+
+            <Button
+                android:id="@+id/btnQuest4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:foregroundGravity="center_vertical"
+                android:backgroundTint="@color/backgroundButton"
+                android:text="Level 4" />
+
+            <Button
+                android:id="@+id/btnQuest5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:foregroundGravity="center_vertical"
+                android:backgroundTint="@color/backgroundButton"
+                android:text="Level 5" />
+
+            <Button
+                android:id="@+id/btnQuest6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:foregroundGravity="center_vertical"
+                android:backgroundTint="@color/backgroundButton"
+                android:text="Level 6" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </FrameLayout>
