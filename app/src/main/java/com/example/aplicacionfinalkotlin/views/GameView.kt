@@ -38,7 +38,7 @@ class GameView(context: Context,var dmg: Int, var healthPotions: Int,var level: 
 
     private val sprites: MutableList<Enemy> = ArrayList<Enemy>()
 
-    private var bpmPlayer= BitmapFactory.decodeResource(resources, R.drawable.grenade)
+    private var bpmPlayer= BitmapFactory.decodeResource(resources, R.drawable.player)
     private var bpmHeart1= BitmapFactory.decodeResource(resources, R.drawable.heart)
     private var bpmHeart2= BitmapFactory.decodeResource(resources, R.drawable.heart)
     private var bpmHeart3= BitmapFactory.decodeResource(resources, R.drawable.heart)
@@ -46,6 +46,7 @@ class GameView(context: Context,var dmg: Int, var healthPotions: Int,var level: 
     private var bpmHeart5= BitmapFactory.decodeResource(resources, R.drawable.heart)
     private var bpmPoti1= BitmapFactory.decodeResource(resources, R.drawable.minipotion)
     private var bpmPoti2= BitmapFactory.decodeResource(resources, R.drawable.minipotion)
+    private var bpmBck= BitmapFactory.decodeResource(resources, R.drawable.background4)
 
     init {
         //Accelerometer initialization
@@ -108,6 +109,7 @@ class GameView(context: Context,var dmg: Int, var healthPotions: Int,var level: 
      */
     override fun draw(canvas: Canvas) {
         super.draw(canvas)
+        canvas.drawBitmap(bpmBck,0.toFloat(),0.toFloat(),null)
 
         if(health>0){
             canvas.drawBitmap(bpmHeart1,40.toFloat(),40.toFloat(),null)
